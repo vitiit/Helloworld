@@ -1,0 +1,618 @@
+/*Ngo Huu Tuan*/
+
+/* Chuẩn hoá cho các trình duyệt khác nhau */
+
+*{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	/*background: #000*/
+}
+
+ /*Định dạng chữ cho toàn bộ trang*/
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: #333;
+	font-height: 1.254em;
+	margin: 0;
+	padding: 0;
+
+	/*font-family: 'Open Sans',sans-serif; */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    /*background-color: #191919;*/
+    /*color: #fff;*/
+    /*margin: 0px;*/
+    /*font-size:14px;  */
+}
+
+/*Thiết lập thông số cho thẻ link*/
+a {
+ 	text-decoration: none;
+ 	color: #3B8BBA;
+ 	transition:all 0.5s;
+ 	-moz-transition:all 0.5s; /*Cho brower cũ*/
+ 	-webkit-transition:all 0.5s; /*Cho brower cũ*/
+}
+
+/*CSS cho header*/
+.header{
+	display: block;
+	overflow: hidden;
+	text-align:left;
+	margin:auto;
+	width: 960px;
+	height: 90px;
+	border-bottom: 1px solid #000;
+	background-color: #333;
+}
+/*
+.logo{
+	float:left;
+	width:700px;
+}
+
+.searchbox{
+	float:right;
+	margin:20px 20px;
+	background :#272727;
+	width: 200px;
+}
+
+.searchbox input{
+	border: none;
+	height: 31px;
+	background : #272727;
+	color: #fff;
+}
+
+.searchbox button{
+	float:right;
+	background : url("../Images/Search.png") no-repeat center ;
+	text-indent: -999em;
+	border: none;
+	cursor: pointer;
+	height: 31px;
+	width: 31px;
+}
+
+.login{
+	float: right;
+	margin: 0px 20px;
+}
+
+.login a{
+	text-decoration: none;
+	color: white;
+	font-size: 12px;
+}
+
+.login a:hover{
+	color: red;
+}
+*/
+
+/*.navigation{
+	border-top: 1px solid #2e2e2e;
+	border-bottom: 1px solid #2e2e2e;
+	height:37px;
+}*/
+
+
+/*CSS cho container*/
+/*
+.container{
+	padding: 0;
+	width: 100%;
+	background: #000;
+	background: red;
+}
+
+.header{
+	height: 80px;
+	background: #333;
+}*/
+
+
+/*CSS cho phần slideshow*/
+
+.slideshow-container{
+	position: relative;
+	max-width: 960px;
+	height: 320px;
+	width: 100%;
+	margin: 0px;
+	background: red;
+}
+
+.slideshow {
+
+    position:relative; 
+    /*height:320px;*/
+    width: 100%;
+    height: 100%;
+    margin:10px auto;
+	
+}
+
+.slideshow img {
+	position:absolute;
+	left:0; 
+	top:0; 
+	width:100%; 
+	height:320px;
+}
+
+.slideshow img:hover {
+	cursor:pointer;
+}
+
+
+
+/*#content{
+	clear: both;
+	padding: 10px;
+	height: 1600px;
+}*/
+
+/*Tạo background cho content*/
+#content.hasimage{
+	/*background-image: url('../Images/BackGround.jpg');*/
+	background-color: #000;
+	background-position: top center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	/*background-color: blue;*/
+}
+
+/*Main box cho content*/
+#mainbox{
+	width: 100%;
+	/*height: 100%;*/
+	margin: 0px auto;
+	max-width: 950px;
+	position: relative;
+
+	/*background: red;*/
+}
+
+
+
+.feature-boxes{
+	position: relative;
+	margin-top: 50px;
+	display: block;
+}
+
+.feature-boxes .box{
+	overflow: hidden;
+	float: left;
+	width: 25%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	border: 3px solid #000;
+}
+
+.feature-boxes .box.double{
+	float: left;
+	width: 50%;
+	position: relative;
+	border: 0px solid #000;
+	margin: 0px;
+	padding: 1px;
+	/*background: green;*/
+}
+
+.feature-boxes .box img {
+	/*opacity: 1;*/
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.feature-boxes figure figcaption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background: #099;*/
+
+}
+
+
+.box-text{
+	opacity:0;
+	/*color: white;*/
+	font-size: 30px;
+	font-weight: 800;
+	text-align: center;
+	margin-top: 40px;
+	-webkit-transition: opacity .2s,-webkit-transform .35s;
+	transition: opacity .2s,transform .35s;
+	-webkit-transform: translate3d(0,-20px,0);
+	transform: translate3d(0,-20px,0);
+}
+
+.feature-boxes .box .overlay {
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	position: absolute;
+	padding: 10px;
+	background: #101101;
+	text-transform: uppercase;
+	color: #999;
+	font-weight: 400;
+
+/*	background: #090909;
+	background: -moz-linear-gradient(left,#090909,#181818);
+	background: -webkit-gradient(linear,0 0,0 100%,from(#090909),to(#181818));
+	background: -webkit-linear-gradient(left,#090909,#181818);
+	background: -ms-linear-gradient(left,#090909,#181818);
+	background: -o-linear-gradient(left,#090909,#181818);*/
+	
+	overflow: hidden;
+	
+/*	-webkit-transition: -webkit-transform .35s;
+	transition: transform .35s;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+*/	
+}
+
+.feature-boxes .box.double .overlay h2{
+	font-size: 20px;
+	/*font-weight: 500;*/
+	margin: 0px 0px 4px;
+	text-align: center;
+}
+
+.feature-boxes .box.double .overlay h4{
+	font-size: 12px;
+	/*font-weight: 200;*/
+	color: #ffee2e;
+	margin: 0px;
+	text-align: center;
+}
+
+
+#horizontalSpace{
+	float: left;
+	display: block;
+	width: 100%;
+	height: 3em;
+	text-align: center;
+	position: relative;
+	background-color: #999;
+}
+
+.feature-boxes .box .overlay h2{
+	font-size: 17px;
+	/*font-weight: 400;*/
+	margin: 0px 0px 4px;
+	text-align: center;
+}
+
+.feature-boxes .box .overlay h4{
+	font-size: 10px;
+	/*font-weight: 200;*/
+	color: #ffee2e;
+	margin: 0px;
+	text-align: center;
+}
+
+#footer{
+
+	float: left;
+	display: block;
+	width: 100%;
+	height: 300px;
+	position: relative;
+	background-color: black;
+}
+
+
+/* CSS cho phần navigation bar (menu)  */
+
+#menu_container{
+	height: 42px;
+	width: 100%;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+	background-color: #000;
+	text-transform: uppercase;
+	font-weight:bold;
+	font-size: 14px;
+}
+
+.menu{
+
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	max-width: 950px;
+	margin: auto;
+	position: relative;
+}
+
+.menu ul{
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+    overflow: hidden;
+
+}
+
+.menu ul li{
+	float: left;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 20px 0px 20px; 
+	background-color: #000;
+}
+
+.menu ul li a{
+	color:#fff;
+  	text-decoration:none;
+  	display:block;
+	padding: 0px 10px;
+	height:40px;
+	font-weight:bold;
+	font-size:14px;
+}
+
+ /*Backgound khi di chuột vào menu*/
+.menu ul li:hover {
+	background-color: #272727; 
+}
+
+
+/*  CSSS cho phần trổ xuống  */
+
+.menu ul li:hover .drop-down{
+	visibility: visible;
+}
+
+.menu .drop-down{
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	width: 100%;
+	overflow: hidden;
+	visibility: hidden;
+	background-color: #fff;
+	z-index: 20;
+	display: block;
+	padding: 10px;
+
+}
+
+/*Mainbox cho menu*/
+.mainbox{ 
+	width: 100%;
+	max-width: 960px;
+	margin: 0px auto;
+	text-align: left;
+	height: 100%;
+}
+
+.menu .drop-down .mainbox{
+	position: relative;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+ /*CSS cho các block*/
+.menu .drop-down .block{
+	float: left;
+	width: auto;
+	padding: 20px 10px 30px;
+
+	/*background-color: #000;*/
+}
+
+
+ /*CSS cho các thành phần ul, li trong block*/
+ .menu .drop-down .block ul.sub-menu{
+ 	background: #fff;
+	/*margin: 0 0 20px;*/
+ }
+
+ .menu .drop-down .block ul.sub-menu li{
+ 	padding: 0px 0px 0px 0px;
+ 	margin: 0px 0px 0px 0px;
+ 	float: none;  /*bắt buộc, vì cần để li element xuống dòng mới, nếu không chiều rộng của ul sẽ bị sai */
+ 	height: auto;
+
+ 	background-color: #fff;
+}
+
+/*CSS cho đường link trong block đầu tiên*/
+.menu .drop-down .block.first ul.sub-menu li a{
+ 	font-weight: bold;
+ 	text-transform: uppercase;
+ }
+
+/*CSS cho các link trong sub-menu*/
+.menu .drop-down .block ul.sub-menu li a {
+	display: block;
+	padding: 0px 0px 0px 10px;
+	margin: 0px;
+	line-height: 1.7em;
+	height: 1.7em;
+	font-weight: 300;
+	font-size: 13;
+	text-transform: none;
+
+	color: #200;
+	background-color: #fff;
+}
+
+.menu .drop-down .block ul.sub-menu li:hover a {
+	background-color: #ccc;
+}
+
+/*Tiêu đề cho các menu con*/
+.menu .drop-down .block h4 {
+	margin: 0 0 10px;
+	background: #000;
+	padding: 6px 10px;
+	font-size: 12px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	font-weight: 200;
+	color: #fff;
+
+	line-height: 130%;  /*làm cho nền đen có bề dày = 120% font size*/
+
+}
+
+
+/* CSS 3 cho phần anmation ảnh */
+
+
+
+.feature-boxes .box .overlay {
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	padding: 12px 8px;
+	background: #090909;
+	
+	background: #090909;
+	background: -moz-linear-gradient(left,#090909,#181818);
+	background: -webkit-gradient(linear,0 0,0 100%,from(#090909),to(#181818));
+	background: -webkit-linear-gradient(left,#090909,#181818);
+	background: -ms-linear-gradient(left,#090909,#181818);
+	background: -o-linear-gradient(left,#090909,#181818);
+	
+	overflow: hidden;
+	
+	-webkit-transition: -webkit-transform .35s;
+	transition: transform .35s;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	
+}
+
+
+.feature-boxes figure a {
+	text-indent: -999em;
+	overflow: hidden;
+	display: block;
+	background: url(about:blank);
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+
+.feature-boxes .box{
+	overflow: hidden;
+	float: left;
+	width: 25%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	border: 3px solid #000;
+}
+
+
+.feature-boxes .box:hover img{
+	
+	opacity:.5;
+}
+
+.feature-boxes .box:hover .overlay{
+	-webkit-transform:translate3d(0,-20px,0);
+	transform:translate3d(0,-20px,0);
+	opacity:.5;
+}
+
+/*.feature-boxes .box:hover .box-text{
+	opacity:1;
+	-webkit-transform:translate3d(0,20px,0);
+	transform:translate3d(0,20px,0)
+}*/
+
+.feature-boxes .box .overlay h2{
+	font-size: 15px;
+	font-weight: 500;
+	margin: 0px 0px 4px;
+	
+}
+
+.feature-boxes .box .overlay h4{
+	font-size: 10px;
+	font-weight: 200;
+	color: #ffee2e;
+	margin: 0px;
+	
+	
+}
+
+
+/*CSS cho footer*/
+
+.footer{
+	height:180px;
+	margin: 20px auto;
+	width: 950px;
+	padding: 0px;	
+	background-color: #191919;
+	border: 1px solid #222;
+
+
+	display: block;
+	/*position: relative;*/
+}
+
+.footer ul.social{
+	float: right;
+	margin: 20px 100px 30px;
+}
+
+.footer ul.social li{
+	border: 0px;
+	overflow: hidden;
+	width: 32px;
+	height: 32px;
+	float:right;
+	margin:5px;
+}
+
+.footer p{
+	float: left;
+	font-weight: normal;
+	font-size: 14px;
+	margin-left: 10px; 
+}
+
+.footer p .contact{
+	font-weight: normal;
+	font-size: 12px;
+	padding: 0px;
+	margin: 3px 0px 3px 0px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,328 @@
+
+/*************** Ngo Huu Tuan ***************
+ * CSS cho phần hiển thị chi tiết sp		*
+ * ProductView.php							*
+ *											*
+ ********************************************/
+
+#box {
+	text-align: left;
+	margin: 10px auto 0 auto;
+	background: #191919;
+	overflow: hidden;
+	border: 10px solid #000;
+	-webkit-box-shadow: #131313 0px 2px 10px;
+	-moz-box-shadow: #131313 0px 3px 10px;
+	box-shadow: #131313 0px 3px 10px;		
+}
+
+#left {
+	border-style:double;
+	border-width:2px;
+	border-radius: 2px;
+	float: left;
+	width: 58%;
+	/*padding: 10px;*/
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	/*padding-bottom:10px;*/
+
+	/*background-color: #999;	*/
+	z-index: 100;
+}
+
+#right {
+	border-style:double;
+	border-width:1px;
+	border-radius:2px;
+	float: right;
+	width: 40%;
+	/*padding-top: 30px;*/
+	/*padding-left : 20px;*/
+	/*padding-right:10px;*/
+	/*padding-bottom:50px;*/
+	/*padding: 10px;*/
+	/*background-color: #333;*/
+	padding: 20px;
+	/*height: 700px;*/
+	z-index: 100;
+}
+
+ul#slider{
+	/*-webkit-border-radius: 10px;*/
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	position: relative;
+	height: 400px;
+	width: 100%;
+	background-color: #740;
+}
+
+ul#slider li {	
+	/*width: 450px;*/
+	/*height: 380px;*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+	
+#slider img {
+	/*width: 500px;*/
+	/*height: 400px;*/
+	width: 100%;
+	height: 100%;
+}	
+	
+ul#slider li p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: inherit;
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+	width: 100%;
+}
+
+.product-descript{
+	margin: 10px ;
+	padding: 0px;
+	/*width: 100%;*/
+	max-height: 350px;
+	overflow-y: scroll;
+	color: #FFF;
+	/*background-color: #999;*/
+}
+
+p.descript{
+	font-size:12px;
+	color:#999;
+}
+
+ul#thumb {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	/*position: relative;*/
+	background: #222;
+	/*overflow: auto;*/
+	height: 55px;
+}
+
+ul#thumb li {
+	/*-webkit-transition: opacity .1s ease-in-out;*/
+	/*height:auto;*/
+	/*display: block;*/
+	overflow: hidden;
+	float: left;
+	margin: 10px 0px 0px 10px;
+}
+
+/*ul#thumb a:hover {
+	opacity: 1;
+} */
+
+ul#thumb img {
+	border: 1px solid #979797;
+	width: 50px;
+}
+
+/*Css cho phía bên phải*/
+
+/*Hiển thị chữ price*/
+#right h1{
+	padding: 0px;
+	margin: 0px;
+	color:#999;
+}
+
+#right p.price{
+	margin: 0px;
+	padding: 0px;
+	font-size: 30px;
+	font-weight: 100;
+	padding-left:0px;
+	color:#999;
+	display: inline-block; /*hiển thị kiểu khối, inline-block thì nó có thể đè lên các thành phần khác, inline: không ngắt dòng, chiều rộng phụ thuộc vào nội dung bên trong*/
+}
+
+#right p.old-price{
+	margin: 0px;
+	display: inline-block;
+	padding-left:15px;
+	font-weight: 100;
+	text-decoration: line-through;
+	color:#999;
+}
+
+#right p.saving{
+	margin: 0px;
+	font-weight: 100;
+	padding-left:15px;
+	display: inline-block;
+	color: red;
+
+}
+
+
+/*Chọn size và số lượng*/
+
+div#select_quantity input, div#select_size select{
+	margin-top: 5px;
+	border-radius: 5px;
+	height: 25px;
+	width: 150px;
+}
+
+
+.button{
+	border-style:solid;
+	border-width:0px;
+	padding: 17px ;
+	margin: 40px auto;
+	cursor:pointer;
+	font-weight:600;
+	line-height:normal;
+	text-align:center;
+	background-color:#3d891f;
+	color:#fff;
+	width: 100%;
+	font-size:15px;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	border-radius: 7px;
+	/*margin: 0 auto;*/
+	text-align: center;
+}
+
+.button:hover{
+	background-color:#4CB722;
+}
+
+
+
+@-webkit-keyframes moveTarget {
+	100% { 
+		left:0px;
+	}
+}
+
+
+ul#slider li:target {
+	-webkit-animation-name: moveTarget; 
+	-webkit-animation-duration: .1s; 
+	-webkit-animation-iteration-count: 1;
+	top:0px;
+	left: 0px;
+	z-index: 10;
+}
+
+
+@-webkit-keyframes moveIt {
+	100% { 
+		left:0px;
+		z-index: 5;
+	}
+}
+
+ul#slider li:not(:target) {
+	-webkit-animation-name: moveIt; 
+  	-webkit-animation-duration: 0.1s; 
+  	-webkit-animation-iteration-count: 1;
+	top:0px;
+	left: 0px;
+}
+
+ul#thumb li:target{
+	opacity:1;
+}
+
+/*
+.notice {
+	color: red;
+	text-transform: uppercase;
+}
+
+.notice a{
+	color: red;
+	text-decoration: underline;
+}
+
+.sale_price {
+	font-size: 26px;
+}
+
+.origin_price {
+	color: #ccc;
+	font-size: 18px;
+	text-decoration: line-through;
+}
+
+.saving {
+	color: #e70835;
+	font-size: 14px;
+	font-weight: inherit;
+	font-style: normal;
+}
+
+
+
+.button{
+	
+	border-style:solid;
+	border-width:0px;
+	padding: 20px;
+	cursor:pointer;
+	font-weight:600;
+	line-height:normal;
+	text-align:center;
+	background-color:#3d891f;
+	color:#fff;
+	witdh: 100%;
+	font-size:15px;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	border-radius: 25px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.button:hover{
+	background-color:#4CB722;
+	
+}
+
+div#select_quantity input, div#select_size select{
+	margin-top: 5px;
+	border-radius: 5px;
+	height: 25px;
+	width: 150px;
+}
+
+.notice {
+	color: red;
+	text-transform: uppercase;
+}
+
+.notice a{
+	color: red;
+	text-decoration: underline;
+}
+
+
+div.fb-comments{
+	margin-top: 20px;
+	background-color:#272727;
+}
+
+._2pi8{
+	background-color: #272727;
+
+}
+
+
+*/
+
+
+
